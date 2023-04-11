@@ -1,5 +1,5 @@
 # CURRENCY CONVERSION
-<img width="1434" alt="image" src="https://user-images.githubusercontent.com/75743543/231082272-9d50f33d-3a1b-478b-8f9f-109b95dafcdc.png">
+<img width="1425" alt="image" src="https://user-images.githubusercontent.com/75743543/231303015-7283c864-45ee-4152-b7d0-6d13a7a4691d.png">
 
 
 ### 1. Description:
