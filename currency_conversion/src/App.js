@@ -4,7 +4,6 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 
 const URL_API = 'https://v6.exchangerate-api.com/v6/3eb345dffea7ffca583c727d/latest/USD'; 
-const URL_API2 = 'https://restcountries.com/v3.1/currency/'
 function App() {
 
   const [amount1, setAmount1] = useState(1);
@@ -69,7 +68,7 @@ function App() {
     axios.get(`https://restcountries.com/v3.1/currency/${currency1}`)
       .then(response => {
         setFlag(response.data[0].flags.png);
-        console.log("FLAAAAAAAAG",flag)
+        console.log("FLAG",flag)
       })
   }
 
@@ -77,7 +76,7 @@ function App() {
     axios.get(`https://restcountries.com/v3.1/currency/${currency2}`)
       .then(response => {
         setFlag2(response.data[0].flags.png);
-        console.log("FLAAAAAAAAG",flag)
+        console.log("FLAG2",flag)
       })
   }
  
