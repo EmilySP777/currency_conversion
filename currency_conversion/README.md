@@ -1,4 +1,7 @@
 # CURRENCY CONVERSION
+<img width="1434" alt="image" src="https://user-images.githubusercontent.com/75743543/231082272-9d50f33d-3a1b-478b-8f9f-109b95dafcdc.png">
+
+
 ### 1. Description:
 
 The function of this project is to visualize the monetary difference between the currencies of all countries.
