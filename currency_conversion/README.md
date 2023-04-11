@@ -2,6 +2,10 @@
 <img width="1425" alt="image" src="https://user-images.githubusercontent.com/75743543/231303015-7283c864-45ee-4152-b7d0-6d13a7a4691d.png">
 
 
+
+https://user-images.githubusercontent.com/75743543/231303828-fe28edff-e5f4-4aac-8f87-0525415c5054.mp4
+
+
 ### 1. Description:
 
 The function of this project is to visualize the monetary difference between the currencies of all countries.
