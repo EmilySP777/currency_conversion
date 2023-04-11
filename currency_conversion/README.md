@@ -1,4 +1,4 @@
-# CURRENCY CONVERSIÓN
+# CURRENCY CONVERSION
 ### 1. Description:
 
 The function of this project is to visualize the monetary difference between the currencies of all countries.
