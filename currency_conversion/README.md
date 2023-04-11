@@ -26,6 +26,24 @@ We have the component that creates the input and the select according to the par
 
 https://v6.exchangerate-api.com/v6/3eb345dffea7ffca583c727d/latest/USD
 
+### Installation Docker
+Install Docker
+#### 1. Clone any currency_conversion project that you need to run
+Clone this repository
+    - git clone git clone --branch main https://github.com/EmilySP777/currency_conversion.git
+#### 2. Create the .env file    
+Create the .env file at root folder of this project following the ENV Template and change all the data to match with your project.
+Note: the .env file is ignored by default on Git so your changes will never be commited.
+
+Once you created and properly setup the variable in the .env file go to your terminal and run
+
+docker compose up
+Checking the project
+Docker may take a while in the first time to generate all the containers. When finished you should be able to open your project using https://localhost:3000
+
+#### 3. Run this project
+
+    - sudo docker-compose up --build
 
 
 # Getting Started with Create React App
