@@ -33,6 +33,8 @@ We have the component that creates the input and the select according to the par
 
 https://v6.exchangerate-api.com/v6/3eb345dffea7ffca583c727d/latest/USD
 
+https://restcountries.com/v3.1/currency/{{cod_country}}
+
 ### Installation Docker
 Install Docker
 #### 1. Clone any currency_conversion project that you need to run
