@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 
 const URL_API = 'https://v6.exchangerate-api.com/v6/3eb345dffea7ffca583c727d/latest/USD'; 
-
+const URL_API2 = 'https://restcountries.com/v3.1/currency/'
 function App() {
 
   const [amount1, setAmount1] = useState(1);
@@ -12,7 +12,8 @@ function App() {
   const [currency1, setCurrency1] = useState('USD'); 
   const [currency2, setCurrency2] = useState('EUR');
   const [rates, setRates] = useState([]);
-
+  const [flag, setFlag] = useState();
+  const [flag2, setFlag2] = useState();
   // Called API rest currency
   useEffect(() => {
     axios.get(URL_API)
@@ -21,11 +22,14 @@ function App() {
       })
   }, []);
 
+  
   // Validation at the moment of starting a conversion is already seen
   useEffect(() => {
     if (!!rates) {
       function init() {
         handleAmount1Change(1);
+        getFlag(currency1);
+        getFlag2(currency2);
       }
       init();
     }
@@ -45,7 +49,9 @@ function App() {
 
   function handleCurrency1Change(currency1) {
     setAmount2(format(amount1 * rates[currency2] / rates[currency1]));
+    getFlag(currency1);
     setCurrency1(currency1);
+    
   }
 
   function handleAmount2Change(amount2) {
@@ -55,8 +61,26 @@ function App() {
 
   function handleCurrency2Change(currency2) {
     setAmount1(format(amount2 * rates[currency1] / rates[currency2]));
+    getFlag2(currency2);
     setCurrency2(currency2);
   }
+
+  function getFlag(currency1){
+    axios.get(`https://restcountries.com/v3.1/currency/${currency1}`)
+      .then(response => {
+        setFlag(response.data[0].flags.png);
+        console.log("FLAAAAAAAAG",flag)
+      })
+  }
+
+  function getFlag2(currency2){
+    axios.get(`https://restcountries.com/v3.1/currency/${currency2}`)
+      .then(response => {
+        setFlag2(response.data[0].flags.png);
+        console.log("FLAAAAAAAAG",flag)
+      })
+  }
+ 
 
 // Component called and variable assignment
   return (
@@ -66,6 +90,7 @@ function App() {
         onAmountChange={handleAmount1Change}
         onCurrencyChange={handleCurrency1Change}
         currencies={Object.keys(rates)}
+        image={flag}
         amount={amount1}
         currency={currency1} />
         <div><h3>=</h3></div>
@@ -73,6 +98,7 @@ function App() {
         onAmountChange={handleAmount2Change}
         onCurrencyChange={handleCurrency2Change}
         currencies={Object.keys(rates)}
+        image={flag2}
         amount={amount2}
         currency={currency2} />
       </div>

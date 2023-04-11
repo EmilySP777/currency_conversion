@@ -11,7 +11,7 @@ function CurrencyConversion(props) {
     <div class="container text-center">
       <div class="row">
         
-          <div class="col-6">
+          <div class="col-5">
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
                 <input class="form-control" 
@@ -19,7 +19,7 @@ function CurrencyConversion(props) {
                       onChange={ev => props.onAmountChange(ev.target.value)} />
             </div>
           </div>  
-          <div class="col-6">
+          <div class="col-5">
             <select class="form-select" 
                     value={props.currency} 
                     onChange={ev => props.onCurrencyChange(ev.target.value)}>
@@ -27,7 +27,9 @@ function CurrencyConversion(props) {
               )))}
             </select>
           </div>
-            
+          <div class="col-2">
+            <img src={props.image} width="70px" class="rounded mx-auto d-block flag"></img>
+          </div>
 
       </div>
     </div>
@@ -40,6 +42,7 @@ CurrencyConversion.propTypes = {
   currencies: PropTypes.array,
   onAmountChange: PropTypes.func,
   onCurrencyChange: PropTypes.func,
+  image: PropTypes.string.isRequired,
 };
 
 export default CurrencyConversion;
